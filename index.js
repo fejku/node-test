@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -6,6 +7,7 @@ require('dotenv/config');
 
 const port = process.env.PORT || 3030;
 
+app.use(cors());
 app.use(bodyParser.json());
 
 const oplatyRoute = require('./routes/oplaty');
